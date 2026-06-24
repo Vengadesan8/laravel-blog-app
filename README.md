@@ -57,35 +57,5 @@ UPDATE users
 SET is_admin = 1
 WHERE id = 1;
 ```
-
-## Screenshots
-
-### Home Page
-
-![Home Page](public/screenshots/home.png)
-
-### Admin Dashboard
-
-![Dashboard](public/screenshots/dashboard.png)
-
-### Create Blog
-
-![Create Blog](public/screenshots/create-blog.png)
-
-### Blog Details
-
-![Blog Details](public/screenshots/blog-details.png)
-
-### Login page
-
-![Login](public/screenshots/login.png)
-
-### Register page
-
-![Register](public/screenshots/register.png)
-
-AUTHOR
-
-Vengadesan E
-
+### Lo
 **Vengadesan E**
