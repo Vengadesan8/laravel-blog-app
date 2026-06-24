@@ -57,5 +57,7 @@ UPDATE users
 SET is_admin = 1
 WHERE id = 1;
 ```
-### Lo
+
+## Author
+
 **Vengadesan E**
