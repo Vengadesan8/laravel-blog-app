@@ -15,7 +15,6 @@ rel="stylesheet">
 href="{{ asset('css/style.css') }}">
 
 </head>
-
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,13 +26,14 @@ href="{{ url('/') }}">
 Blog
 </a>
 
-
+@if(url()->current() == url('/'))
 <form method="GET"
 action="{{ url('/') }}"
 class="d-flex ms-auto me-3">
 
 <input type="text"
 name="search"
+id="search"
 value="{{ request('search') }}"
 placeholder="Search Blog"
 class="form-control me-2">
@@ -43,6 +43,7 @@ Search
 </button>
 
 </form>
+@endif
 
 <div>
 @auth
@@ -132,6 +133,47 @@ Laravel Blog
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+$('#search').keyup(function(){
+
+let search=$(this).val();
+
+$.ajax({
+
+url:'/',
+
+type:'GET',
+
+data:{
+
+search:search
+
+},
+
+success:function(response){
+
+$('#posts').html(response);
+
+},
+
+error:function(xhr){
+
+
+console.log(xhr.responseText);
+
+}
+
+});
+});
+
+});
+
+</script>
 
 </body>
 

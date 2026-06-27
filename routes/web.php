@@ -3,12 +3,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/',[PostController::class,'index']);
 Route::get('/blog/{post}',[PostController::class,'show'])->name('blog.show');
+
 Route::middleware(['auth','admin'])->group(function(){
     Route::get('/admin/dashboard',[PostController::class,'dashboard'])->name('dashboard');
     Route::get('/dashboard',[PostController::class,'dashboard'])->name('dashboard');

@@ -14,6 +14,11 @@ class PostController extends Controller
         $posts = Post::when($search,function($query,$search){
             $query->where('title','LIKE',"%{$search}%"); 
         })->latest()->paginate(6);
+
+        if($request->ajax()){
+            return view('blogs.posts',compact('posts'))->render();
+        }
+        
         $count = Post::count();
         return view('blogs.index',compact('posts','count'));
     }

@@ -99,6 +99,6 @@ Delete
 
 </table>
 
-{{ $posts->links() }}
+{{ $posts->links() }}   
 
 @endsection
